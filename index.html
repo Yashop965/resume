@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Resume - Yash Raj Shrivastava</title>
+  <style>
+    body { font-family: Arial, sans-serif; margin: 20px; line-height: 1.6; }
+    h1, h2, h3 { color: #333; }
+    .section { margin-bottom: 30px; }
+    ul { margin: 0; padding-left: 20px; }
+    table { border-collapse: collapse; width: 100%; margin-top: 10px; }
+    th, td { border: 1px solid #ccc; padding: 8px; text-align: left; }
+  </style>
+</head>
+<body>
+
+  <header>
+    <h1>Yash Raj Shrivastava</h1>
+    <h2>Co-founder & Full-Stack Developer</h2>
+    <p>Gurugram, India | +91 9589127943</p>
+    <p>Email: <a href="mailto:yashop965@gmail.com">yashop965@gmail.com</a></p>
+    <p>LinkedIn: <a href="https://linkedin.com/in/yash-shrivastava">linkedin.com/in/yash-shrivastava</a></p>
+    <p>GitHub: <a href="https://github.com/Yashop965">github.com/Yashop965</a></p>
+  </header>
+
+  <section class="section">
+    <h2>Professional Summary</h2>
+    <p>Co-founder, product designer, and full-stack developer with a B.Tech in Computer Science. I design and build scalable, privacy-first SaaS platforms and polished consumer experiences. Experienced in shipping web applications using Python and JavaScript, designing robust data models with Prisma, and driving product development from prototype to deployment. Built hardware projects including an open-source ESP32 quadruped robot and ROS2 swarm drone system — combining software engineering with embedded systems and AI/ML. Recently completed 360 Labs AI test work week and gained interview insights from Sagar Defence Engineering.</p>
+  </section>
+
+  <section class="section">
+    <h2>Hardware Projects Portfolio</h2>
+
+    <h3>Sesame Robot — ESP32 Quadruped (Open Source)</h3>
+    <ul>
+      <li>Built a mini quadruped robot from scratch using ESP32 DevKit V1, 8x MG90S metal-gear servos, and 3D-printed PLA chassis.</li>
+      <li>Implemented custom firmware with WiFi AP, captive portal for browser-based control, REST API (/api/status, /api/command), and OLED face expressions via SSD1306.</li>
+      <li>Pinned ESP32Servo v3.0.9, configured PWM timer allocation (timers 0–3 for 8 servos), managed GPIO pinout mapping across all legs.</li>
+      <li>Status: Assembly phase complete, basic walking gait achieved. Debugging Gazebo simulation in WSL2.</li>
+      <li>GitHub: github.com/Yashop965/sesame-robot | Cost optimized to ~₹2,150 + ₹1,000 3D printing.</li>
+    </ul>
+
+    <h3>Swarm Drone System — Carrier Hexacopter Architecture</h3>
+    <ul>
+      <li>Designed a carrier-based swarm where a hexacopter mother drone carries 4-6 autonomous sub-drones, delegates tasks via capability-aware scoring, and manages autonomous docking after missions.</li>
+      <li>Built full ROS2 Humble simulation workspace: URDF hexacopter model, motor controller node, task router with battery/proximity/sensor scoring algorithm, mesh network protocol (ROS→MQTT/TCP/UDP bridge).</li>
+      <li>Deployed Gazebo physics simulation with headless testing — 4/4 task assignments validated, clean colcon build in 1.29s.</li>
+      <li>Status: Simulation phase. Planning hardware procurement with budget-maximizing approach (tethered PoC before battery).</li>
+      <li>Full stack: ground station UI → mother drone → sub-drone wireless mesh → return-and-dock cycle with failsafe autonomous navigation.</li>
+    </ul>
+
+    <h3>RiceScan (Mobile + Hardware Integration)</h3>
+    <ul>
+      <li>Objective: Analyze rice grain images for classification and quality estimation.</li>
+      <li>Hardware: Custom camera setup with controlled lighting.</li>
+      <li>Software: Flutter mobile app, AI/ML backend.</li>
+      <li>Pipeline: Image capture → Segmentation → Classification → Percentage estimation.</li>
+      <li>Model: EfficientNetV2S for crop disease detection.</li>
+      <li>Impact: Quality control for farmers and food organizations.</li>
+    </ul>
+
+    <h3>DIY Electronics & Camera Building</h3>
+    <ul>
+      <li>Objective: Experiment with custom electronics and optics.</li>
+      <li>Hardware: Sensors, lenses, microcontrollers.</li>
+      <li>Projects: Exposure control systems, custom camera prototypes.</li>
+      <li>Learning Outcomes: Optics understanding, electronics assembly skills.</li>
+    </ul>
+
+    <h3>Drone Components Research & Assembly</h3>
+    <ul>
+      <li>Objective: Optimize drone performance through component testing.</li>
+      <li>Hardware: ESC 30A, Hobbywing ESC, DShot ESC, motor drivers.</li>
+      <li>Focus Areas: Flight stability, power efficiency, compatibility testing.</li>
+    </ul>
+  </section>
+
+  <section class="section">
+    <h2>Recent Experience</h2>
+    
+    <h3>360 Labs AI Test Work Week (Aug 2026)</h3>
+    <ul>
+      <li>Completed intensive 1-week AI development bootcamp.</li>
+      <li>Made dozen technical decisions in rapid succession — shipping fast, learning faster.</li>
+      <li>Validated ability to work under time pressure with quality output.</li>
+    </ul>
+
+    <h3>Sagar Defence Engineering — Interview (Aug 2026)</h3>
+    <ul>
+      <li>Technical interview for drone/AI internship position.</li>
+      <li>Discussed robotics projects, embedded systems experience, and defence sector requirements.</li>
+      <li>Gained insights into defence hiring practices and security clearance considerations.</li>
+    </ul>
+  </section>
+
+  <section class="section">
+    <h2>Technical Skills</h2>
+    <table>
+      <tr>
+        <th>Languages</th>
+        <th>Database & ORM</th>
+      </tr>
+      <tr>
+        <td>Python, JavaScript, TypeScript, Dart, C++, SQL</td>
+        <td>PostgreSQL, Prisma (Schema & Seeding), Firebase</td>
+      </tr>
+      <tr>
+        <th>AI & Machine Learning</th>
+        <th>Styling & Design</th>
+      </tr>
+      <tr>
+        <td>GenAI Applications, Prompt Engineering, LLMOps, AI Chatbots, OpenCV, EfficientNet</td>
+        <td>Tailwind CSS, Component-Driven Design</td>
+      </tr>
+      <tr>
+        <th>Frameworks & Libraries</th>
+        <th>Developer Tools</th>
+      </tr>
+      <tr>
+        <td>Next.js, React, NextAuth.js, Flutter, Node.js, Express</td>
+        <td>Git, Docker, Vercel, ESLint, ROS2 Humble</td>
+      </tr>
+      <tr>
+        <th>Hardware & Embedded</th>
+        <th>Cloud & Infra</th>
+      </tr>
+      <tr>
+        <td>ESP32, Raspberry Pi, Arduino, Servo Control, PWM, I2C/OLED</td>
+        <td>AWS basics, Firebase Cloud Messaging</td>
+      </tr>
+    </table>
+  </section>
+
+  <section class="section">
+    <h2>Experience</h2>
+    <h3>Co-founder & Product Designer - Stealth-mode SaaS (Ongoing)</h3>
+    <ul>
+      <li>Leading product strategy, technical architecture, and investor outreach for a new reservation and analytics SaaS platform.</li>
+      <li>Responsible for the entire product lifecycle, from initial ideation and UX design to full-stack development and deployment.</li>
+    </ul>
+
+    <h3>Lead Developer - Gurtai Bot (Ongoing)</h3>
+    <ul>
+      <li>Built a Python-based Telegram AI assistant with local LLM integration via Ollama for privacy-first, cost-effective AI responses.</li>
+      <li>Designed plugin-based modular architecture enabling extensible integrations for workflow automation and developer-centric tasks.</li>
+      <li>Containerized with Docker for consistent deployment across environments.</li>
+    </ul>
+  </section>
+
+  <section class="section">
+    <h2>Selected Projects</h2>
+    <h3>CamPass (Student Safety & Tracking System)</h3>
+    <ul>
+      <li>Developed a location tracking and safety application for student security.</li>
+      <li>Implemented real-time geofence tracking, SOS alerts, and smart notifications using Firebase Cloud Messaging.</li>
+      <li>Engineered a digital pass system with barcode scanning and role-based access.</li>
+      <li>Tech Stack: Flutter, Node.js, Express, PostgreSQL, Firebase Cloud Messaging, Google Maps API.</li>
+    </ul>
+
+    <h3>RiceScan (AI Crop Disease Detection)</h3>
+    <ul>
+      <li>Built an AI-powered agricultural app using EfficientNetV2S to identify crop diseases.</li>
+      <li>Integrated local knowledge base for symptoms, treatment plans, and regional insights.</li>
+      <li>Designed feedback loop for retraining the model based on user reports.</li>
+      <li>Tech Stack: Python, Machine Learning, Node.js, REST APIs.</li>
+    </ul>
+
+    <h3>Gurtai (Personal AI Assistant)</h3>
+    <ul>
+      <li>Architected a Python-based Telegram assistant with local LLM integration via Ollama — privacy-first, zero API costs.</li>
+      <li>Designed plugin-based modular architecture enabling extensible integrations for workflow automation and developer-centric tasks.</li>
+      <li>Dockerized for consistent deployment across environments.</li>
+      <li>Tech Stack: Python, Ollama, Telegram Bot API, Docker.</li>
+    </ul>
+  </section>
+
+  <section class="section">
+    <h2>Education</h2>
+    <p>IILM University, Gurugram</p>
+    <p>Bachelor of Technology (B.Tech), Computer Science & Engineering (2025 - 2029)</p>
+  </section>
+
+  <section class="section">
+    <h2>Certifications & Professional Development</h2>
+    <p>DeepLearning.AI</p>
+    <ul>
+      <li>AI Python for Beginners</li>
+      <li>Build Rich-Context AI Apps with Anthropic</li>
+    </ul>
+    <p>360 Labs AI Test Work Week (Aug 2026)</p>
+  </section>
+
+</body>
+</html>
