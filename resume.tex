@@ -1,0 +1,186 @@
+\documentclass[10pt]{article}
+\usepackage[margin=0.72in,top=0.6in,bottom=0.7in]{geometry}
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage{newtxtext}
+\usepackage{enumitem}
+\usepackage{titlesec}
+\usepackage{xcolor}
+\usepackage[colorlinks=false]{hyperref}
+
+\definecolor{accent}{HTML}{1F4E79}
+\setlength{\parindent}{0pt}
+\setlength{\parskip}{1.6pt}
+
+% ---- variant toggles (defined in variant.tex, defaults below) ----
+\newif\ifinclhardware \inclhardwaretrue
+\newif\ifinclrecent \inclrecenttrue
+\newif\ifmllead \mlleadfalse
+
+\input{variant} % may redefine the toggles above
+
+% ---- compact section styling ----
+\titleformat{\section}{\normalfont\normalsize\bfseries\color{accent}}{}{0em}{}[{\color{accent}\titlerule[0.4pt]}]
+\titlespacing*{\section}{0pt}{5pt}{2.5pt}
+\titleformat{\subsection}{\normalfont\normalsize\bfseries}{}{0em}{}
+\titlespacing*{\subsection}{0pt}{4pt}{1pt}
+\setlist{itemsep=0.4pt,topsep=1.5pt,parsep=0pt,left=1.15em}
+
+\newcommand{\itemhead}[1]{\textbf{#1}}
+
+\begin{document}
+
+% ================= HEADER =================
+\begin{center}
+{\LARGE\textbf{Yash Raj Shrivastava}}\\[2pt]
+{\normalsize Co-founder \& Full-Stack Developer \textbar{} B.Tech CSE (IILM, 2025--2029)}\\[1pt]
+{\small Gurugram, India \textbar{} +91 9589127943 \textbar{} \href{mailto:yashop965@gmail.com}{yashop965@gmail.com}\\
+\href{https://linkedin.com/in/yash-shrivastava}{linkedin.com/in/yash-shrivastava} \textbar{} \href{https://github.com/Yashop965}{github.com/Yashop965} \textbar{} \href{https://yashop965.github.io/resume/}{yashop965.github.io/resume}}
+\end{center}
+\vspace{2pt}
+
+% ================= SUMMARY =================
+\section{Summary}
+\ifmllead
+\begin{itemize}
+  \item Computer-science student combining software engineering with embedded systems and applied ML/GenAI.
+  \item Built an open-source ESP32 quadruped robot and a ROS2 swarm-drone simulation; run production full-stack and local-LLM systems.
+  \item Completed the 360 Labs AI test work week; Sagar Defence Engineering technical interview (drone/AI internship).
+\end{itemize}
+\else
+\begin{itemize}
+  \item Co-founder, product designer, and full-stack developer. Shipped web applications in Python and JavaScript, robust data models with Prisma, and took a reservation/analytics SaaS from prototype to deployment.
+  \item Hardware portfolio: open-source ESP32 quadruped robot and ROS2 swarm-drone system --- embedded systems plus AI/ML.
+  \item Completed the 360 Labs AI test work week; Sagar Defence Engineering technical interview (drone/AI internship).
+\end{itemize}
+\fi
+
+% ================= EXPERIENCE =================
+\section{Experience}
+
+\subsection{Co-founder \& Product Designer --- Stealth-mode SaaS \hfill (ongoing)}
+\begin{itemize}
+  \item Leading product strategy, technical architecture, and investor outreach for a reservation and analytics SaaS platform.
+  \item Owns the full product lifecycle: ideation, UX design, full-stack development, and deployment.
+\end{itemize}
+
+\subsection{Lead Developer --- Gurtai Bot \hfill (ongoing)}
+\begin{itemize}
+  \item Built a Python-based Telegram AI assistant with local LLM integration via Ollama for privacy-first, zero API-cost responses.
+  \item Designed a plugin-based modular architecture for extensible workflow automation; containerized with Docker.
+\end{itemize}
+
+\ifinclrecent
+\subsection{360 Labs --- AI Test Work Week \hfill (Aug 2026)}
+\begin{itemize}
+  \item Completed an intensive 1-week AI development program: rapid decision-making, fast shipping, validated output under time pressure.
+\end{itemize}
+
+\subsection{Sagar Defence Engineering --- Technical Interview (Drone/AI Intern) \hfill (Aug 2026)}
+\begin{itemize}
+  \item Interviewed on robotics projects, embedded systems, and defence-sector requirements; assessed interview process for defence hiring.
+\end{itemize}
+\fi
+
+% ================= ML / AI PROJECTS (ml-lead placement) =================
+\ifmllead
+\section{Selected Projects}
+
+\subsection{RiceScan --- AI Crop-Disease Detection \hfill (Python, EfficientNetV2S, OpenCV)}
+\begin{itemize}
+  \item Built an AI agricultural pipeline: image capture $\to$ segmentation $\to$ classification $\to$ quality-percentage estimation (EfficientNetV2S, custom camera + controlled lighting).
+  \item Integrated a local knowledge base for symptoms and treatment; designed a user-feedback loop for model retraining.
+\end{itemize}
+
+\subsection{Gurtai --- Local-LLM AI Assistant \hfill (Python, Ollama, Docker)}
+\begin{itemize}
+  \item Architected a Telegram assistant running local LLMs via Ollama --- privacy-first, zero API cost; plugin-based architecture for workflow automation.
+\end{itemize}
+
+\subsection{Sesame Robot --- ESP32 8-DOF Quadruped (Open Source)}
+\begin{itemize}
+  \item Built a mini quadruped from scratch: ESP32 DevKitC, 8$\times$ MG90S metal-gear servos, 3D-printed PLA chassis; custom firmware (Wi-Fi AP, captive-portal browser control, REST API, OLED face expressions).
+  \item Pinned ESP32Servo v3.0.9, allocated PWM timers for all 8 servos; diagnosed a 4\,A power failure via measurement and thermal modeling, fixed with an ECO firmware actuation limit (2\,A verified).
+  \item Walk gait achieved; Gazebo (ROS2) simulation in WSL2; code at \href{https://github.com/Yashop965/sesame-robot}{github.com/Yashop965/sesame-robot} (~INR 3,150 total cost).
+\end{itemize}
+
+\subsection{Swarm Drone System --- ROS2 Humble \hfill (URDF, Gazebo, MQTT)}
+\begin{itemize}
+  \item Designed a carrier hexacopter that carries 4--6 autonomous sub-drones with capability-aware task scoring and autonomous docking; full simulation workspace with 4/4 task assignments validated.
+\end{itemize}
+\fi
+
+% ================= SOFTWARE PROJECTS =================
+\section{Software Projects}
+
+\subsection{CamPass --- Student Safety \& Tracking \hfill (Flutter, Node.js, PostgreSQL, FCM)}
+\begin{itemize}
+  \item Real-time geofence tracking, SOS alerts, and smart notifications via Firebase Cloud Messaging; digital pass system with barcode scanning and role-based access.
+\end{itemize}
+
+\ifmllead\relax\else
+\subsection{RiceScan --- AI Crop-Disease Detection \hfill (Python, EfficientNetV2S)}
+\begin{itemize}
+  \item AI-powered agricultural app (EfficientNetV2S) with local knowledge base for symptoms/treatments and a feedback loop for model retraining.
+\end{itemize}
+\fi
+
+% ================= HARDWARE =================
+\ifinclhardware
+\section{Hardware \& Robotics Projects}
+
+\ifmllead\relax\else
+\subsection{Sesame Robot --- ESP32 8-DOF Quadruped (Open Source)}
+\begin{itemize}
+  \item Built a mini quadruped from scratch: ESP32 DevKitC, 8$\times$ MG90S metal-gear servos, 3D-printed PLA chassis; custom firmware (Wi-Fi AP, captive-portal browser control, REST API, OLED status).
+  \item Pinned ESP32Servo v3.0.9, configured PWM timer allocation for 8 servos; 4\,A power failure root-caused and fixed via firmware ECO mode + upgraded 5\,A buck (verified 2\,A).
+  \item Basic walk gait achieved; Gazebo/ROS2 simulation in WSL2; open source at \href{https://github.com/Yashop965/sesame-robot}{github.com/Yashop965/sesame-robot}.
+\end{itemize}
+\fi
+
+\subsection{Swarm Drone System --- ROS2 Humble Simulation}
+\begin{itemize}
+  \item Carrier hexacopter carrying 4--6 autonomous sub-drones; capability-aware task scoring, ROS$\to$MQTT/TCP mesh bridge, Gazebo physics with 4/4 validated task assignments (clean colcon build, 1.29\,s).
+  \item Full stack: ground-station UI $\to$ mother drone $\to$ sub-drone mesh $\to$ return-and-dock cycle with failsafe navigation.
+\end{itemize}
+
+\ifmllead\relax\else
+\subsection{Other Hardware --- DIY Cameras \& Drone Component Testing}
+\begin{itemize}
+  \item Custom camera prototypes with controlled lighting and exposure-control systems; drone ESC (30\,A, Hobbywing, DShot) and motor-driver testing for flight stability and power efficiency.
+\end{itemize}
+\fi
+\fi
+
+% ================= EXPERIMENTS & OPS =================
+\section{Experiments \& Ops}
+\begin{itemize}
+  \item \itemhead{Simulation:} ROS2 Humble + Gazebo headless testing in WSL2 --- URDF modeling, gait-pattern validation (4/4 task assignments on the swarm system).
+  \item \itemhead{Ops:} Docker for reproducible environments (Gurtai, dev fleets); CI/CD failure triage (local-pass/CI-fail); E2E test automation (Playwright).
+  \item \itemhead{Lab work:} IoT \& Robotics Foundation Lab (CSE25309) --- ESP32/I2C/PWM servo control, circuit simulation (Tinkercad), 8-DOF quadruped project.
+\end{itemize}
+
+% ================= SKILLS (ATS-safe: plain comma lines, no table) =================
+\section{Skills}
+\begin{itemize}
+  \item \itemhead{Languages:} Python, JavaScript, TypeScript, C++, Dart, SQL, Bash
+  \item \itemhead{AI \& ML:} GenAI applications, prompt engineering, LLMOps, AI agents \& chatbots, OpenCV, EfficientNet (transfer learning), RAG concepts
+  \item \itemhead{Web \& Mobile:} Next.js, React, Node.js, Express, Flutter, Prisma/PostgreSQL, Firebase, Docker
+  \item \itemhead{Embedded \& Hardware:} ESP32, Raspberry Pi, Arduino, ROS2 (Humble), Gazebo, servo/PWM/I2C, breadboard \& schematic-level circuit work
+  \item \itemhead{Tools:} Git, GitHub Actions-style CI debugging, Vercel, ESLint, CAD (Fusion 360), WSL2, AWS (basics)
+\end{itemize}
+
+% ================= EDUCATION =================
+\section{Education}
+\begin{itemize}
+  \item \itemhead{IILM University, Gurugram} --- B.Tech, Computer Science \& Engineering (2025--2029)
+\end{itemize}
+
+% ================= CERTIFICATIONS =================
+\section{Certifications}
+\begin{itemize}
+  \item DeepLearning.AI --- \textit{AI Python for Beginners}; \textit{Build Rich-Context AI Apps with Anthropic}
+  \item 360 Labs --- AI Test Work Week (Aug 2026)
+\end{itemize}
+
+\end{document}
