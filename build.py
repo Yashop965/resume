@@ -54,7 +54,7 @@ def deploy():
         r = subprocess.run(list(args), cwd=REPO, capture_output=True, text=True)
         if r.returncode != 0:
             print(r.stdout, r.stderr); raise SystemExit("git step failed")
-    sh("git", "add", "resume.tex", "cv.tex", "build.py",
+    sh("git", "add", "resume.tex", "cv.tex", "build.py", "index.html",
        "resume.pdf", "resume_full.pdf", "resume_software.pdf", "resume_ml.pdf", "cv.pdf")
     sh("git", "add", ".gitignore")
     sh("git", "commit", "-m", "resume + cv: LaTeX sources (tectonic) and built PDFs")
