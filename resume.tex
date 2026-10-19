@@ -49,9 +49,9 @@
 \end{itemize}
 \else
 \begin{itemize}
-  \item Co-founder, product designer, and full-stack developer. Shipped web applications in Python and JavaScript, robust data models with Prisma, and took a reservation/analytics SaaS from prototype to deployment.
-  \item Hardware portfolio: open-source ESP32 quadruped robot and ROS2 swarm-drone system --- embedded systems plus AI/ML.
-  \item Completed the 360 Labs AI test work week; Sagar Defence Engineering technical interview (drone/AI internship).
+  \item Full-stack developer (Next.js, React, Prisma, Node.js, Python) with a co-founder track record: shipped a reservation/analytics SaaS from prototype to deployment.
+  \item GenAI/LLM engineering: local-LLM agents (Ollama/LM Studio), prompt and context design, RAG concepts; PII-aware browser agent for SIH 2026 (ISRO).
+  \item Side portfolio: open-source ESP32 quadruped robot and ROS2 swarm simulation; completed the 360 Labs AI test week.
 \end{itemize}
 \fi
 
@@ -70,12 +70,20 @@
   \item Designed a plugin-based modular architecture for extensible workflow automation; containerized with Docker.
 \end{itemize}
 
+\subsection{SIH 2026 (ISRO) --- PS171 Browser Agent \hfill Optimization \& Testing Lead}
+\begin{itemize}
+  \item PII-aware browser agent (WXT/React extension + backend) for ISRO's Smart India Hackathon; led E2E test automation, performance optimization, and live-run diagnostics.
+  \item Produced judge-facing project documentation and demo assets for the final submission.
+\end{itemize}
+
 \ifinclrecent
 \subsection{360 Labs --- AI Test Work Week \hfill (Aug 2026)}
 \begin{itemize}
   \item Completed an intensive 1-week AI development program: rapid decision-making, fast shipping, validated output under time pressure.
 \end{itemize}
+\fi
 
+\ifmllead
 \subsection{Sagar Defence Engineering --- Technical Interview (Drone/AI Intern) \hfill (Aug 2026)}
 \begin{itemize}
   \item Interviewed on robotics projects, embedded systems, and defence-sector requirements; assessed interview process for defence hiring.
@@ -129,14 +137,13 @@
 \ifinclhardware
 \section{Hardware \& Robotics Projects}
 
-\ifmllead\relax\else
+\ifmllead
 \subsection{Sesame Robot --- ESP32 8-DOF Quadruped (Open Source)}
 \begin{itemize}
   \item Built a mini quadruped from scratch: ESP32 DevKitC, 8$\times$ MG90S metal-gear servos, 3D-printed PLA chassis; custom firmware (Wi-Fi AP, captive-portal browser control, REST API, OLED status).
   \item Pinned ESP32Servo v3.0.9, configured PWM timer allocation for 8 servos; 4\,A power failure root-caused and fixed via firmware ECO mode + upgraded 5\,A buck (verified 2\,A).
   \item Basic walk gait achieved; Gazebo/ROS2 simulation in WSL2; open source at \href{https://github.com/Yashop965/sesame-robot}{github.com/Yashop965/sesame-robot}.
 \end{itemize}
-\fi
 
 \subsection{Swarm Drone System --- ROS2 Humble Simulation}
 \begin{itemize}
@@ -144,10 +151,16 @@
   \item Full stack: ground-station UI $\to$ mother drone $\to$ sub-drone mesh $\to$ return-and-dock cycle with failsafe navigation.
 \end{itemize}
 
-\ifmllead\relax\else
 \subsection{Other Hardware --- DIY Cameras \& Drone Component Testing}
 \begin{itemize}
   \item Custom camera prototypes with controlled lighting and exposure-control systems; drone ESC (30\,A, Hobbywing, DShot) and motor-driver testing for flight stability and power efficiency.
+\end{itemize}
+\else
+\subsection{Side Projects}
+\begin{itemize}
+  \item \itemhead{Sesame Robot} (open source): ESP32 quadruped --- 8$\times$ MG90S servos, Wi-Fi/captive-portal control, REST + OLED firmware, power-failure postmortem (\href{https://github.com/Yashop965/sesame-robot}{github.com/Yashop965/sesame-robot}).
+  \item \itemhead{Swarm Drone System}: ROS2 Humble + Gazebo carrier-hexacopter --- capability-aware task scoring, MQTT mesh bridge, 4/4 validated task assignments.
+  \item \itemhead{Other}: DIY camera prototypes; drone ESC/motor-driver testing (30\,A, Hobbywing, DShot).
 \end{itemize}
 \fi
 \fi
@@ -155,19 +168,22 @@
 % ================= EXPERIMENTS & OPS =================
 \section{Experiments \& Ops}
 \begin{itemize}
-  \item \itemhead{Simulation:} ROS2 Humble + Gazebo headless testing in WSL2 --- URDF modeling, gait-pattern validation (4/4 task assignments on the swarm system).
   \item \itemhead{Ops:} Docker for reproducible environments (Gurtai, dev fleets); CI/CD failure triage (local-pass/CI-fail); E2E test automation (Playwright).
+  \item \itemhead{Local AI inference:} Ollama and LM Studio --- running and evaluating local LLMs for agent experiments and Gurtai; prompt and context tuning.
+\ifmllead
+  \item \itemhead{Simulation:} ROS2 Humble + Gazebo headless testing in WSL2 --- URDF modeling, gait-pattern validation (4/4 task assignments on the swarm system).
   \item \itemhead{Lab work:} IoT \& Robotics Foundation Lab (CSE25309) --- ESP32/I2C/PWM servo control, circuit simulation (Tinkercad), 8-DOF quadruped project.
+\fi
 \end{itemize}
 
 % ================= SKILLS (ATS-safe: plain comma lines, no table) =================
 \section{Skills}
 \begin{itemize}
   \item \itemhead{Languages:} Python, JavaScript, TypeScript, C++, Dart, SQL, Bash
-  \item \itemhead{AI \& ML:} GenAI applications, prompt engineering, LLMOps, AI agents \& chatbots, OpenCV, EfficientNet (transfer learning), RAG concepts
+  \item \itemhead{AI \& ML:} GenAI applications, prompt engineering, LLMOps, AI agents \& chatbots, local inference (Ollama, LM Studio), RAG concepts, OpenCV, EfficientNet (transfer learning)
   \item \itemhead{Web \& Mobile:} Next.js, React, Node.js, Express, Flutter, Prisma/PostgreSQL, Firebase, Docker
   \item \itemhead{Embedded \& Hardware:} ESP32, Raspberry Pi, Arduino, ROS2 (Humble), Gazebo, servo/PWM/I2C, breadboard \& schematic-level circuit work
-  \item \itemhead{Tools:} Git, GitHub Actions-style CI debugging, Vercel, ESLint, CAD (Fusion 360), WSL2, AWS (basics)
+  \item \itemhead{Tools:} Git, CI/CD debugging, Playwright E2E, Vercel, ESLint, WSL2, AWS (basics)
 \end{itemize}
 
 % ================= EDUCATION =================

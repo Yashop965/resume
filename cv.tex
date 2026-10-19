@@ -33,7 +33,7 @@
 
 % ================= PROFILE =================
 \section{Profile}
-Computer-science undergraduate (IILM University, Gurugram) working across the full stack of product and systems engineering: full-stack web applications, embedded/robotics hardware (ESP32, ROS2), and applied AI/ML \& GenAI. I take projects from idea to shipped artifact --- 3D-printed and soldered hardware, open-source firmware, cloud-deployed software --- and I document the work publicly. Currently co-building a stealth-mode SaaS, maintaining an open-source quadruped-robot codebase, and completing an 8-DOF robotics lab project (viva: 14.5/15).
+Computer-science undergraduate (IILM University, Gurugram) working across the full stack of product and systems engineering: full-stack web applications, embedded/robotics hardware (ESP32, ROS2), and applied AI/ML \& GenAI. I take projects from idea to shipped artifact --- 3D-printed and soldered hardware, open-source firmware, cloud-deployed software --- and I document the work publicly. Currently co-building a stealth-mode SaaS, maintaining an open-source quadruped-robot codebase, and completing an 8-DOF robotics lab project (viva: 14.5/15). Daily practice includes local-LLM experimentation (Ollama/LM Studio), internal automation via agent workflows, and a second-brain knowledge-graph architecture that drives agent personalization.
 
 % ================= EDUCATION =================
 \section{Education}
@@ -53,7 +53,7 @@ Computer-science undergraduate (IILM University, Gurugram) working across the fu
 
 \subsection{Lead Developer --- Gurtai Bot (Local-LLM AI Assistant) \hfill (ongoing)}
 \begin{itemize}
-  \item Built a Python-based Telegram AI assistant with local LLM integration via Ollama --- privacy-first, zero per-query API cost.
+  \item Built a Python-based Telegram AI assistant with local LLM inference via Ollama and LM Studio --- privacy-first, zero per-query API cost.
   \item Designed a plugin-based modular architecture for extensible workflow automation and developer-centric tasks; containerized with Docker for consistent deployment.
 \end{itemize}
 
@@ -97,9 +97,9 @@ Computer-science undergraduate (IILM University, Gurugram) working across the fu
   \item Impact: quality control for farmers and food organizations.
 \end{itemize}
 
-\subsection{Gurtai --- Local-LLM Agent Stack \hfill (Ollama, Docker)}
+\subsection{Gurtai --- Local-LLM Agent Stack \hfill (Ollama, LM Studio, Docker)}
 \begin{itemize}
-  \item Local inference via Ollama: cost control, privacy, and offline capability; plugin system for workflow automation; Docker deployment.
+  \item Local inference via Ollama/LM Studio: cost control, privacy, and offline capability; model-selection and quantization tradeoffs; plugin system for workflow automation; Docker deployment.
   \item Prompt-engineering and LLM-ops practice from daily use; DeepLearning.AI certified (Anthropic rich-context apps).
 \end{itemize}
 
@@ -131,8 +131,11 @@ Computer-science undergraduate (IILM University, Gurugram) working across the fu
 \end{itemize}
 
 % ================= EXPERIMENTS & OPS =================
-\section{Experiments, Simulation \& Ops}
+\section{Experiments, Automation \& Ops}
 \begin{itemize}
+  \item \itemhead{Local AI inference:} Ollama and LM Studio --- running, quantizing, and evaluating local LLMs for agent experiments and Gurtai; prompt/context design and model-selection tradeoffs.
+  \item \itemhead{Internal automation:} personalised Hermes Agent workflows for internal automation --- documentation, research digests, CI triage, and outreach pipelines; a personal second brain (Obsidian) with a knowledge-graph architecture that drives agent personalization and optimization.
+  \item \itemhead{Architectural thinking:} data-model design (Prisma/PostgreSQL schemas), plugin/modular system design (Gurtai), multi-agent and fleet topologies, and simulation-first hardware development (WSL2 + Gazebo).
   \item \itemhead{Simulation:} ROS2 Humble + Gazebo headless testing in WSL2 --- URDF modeling, gait-pattern validation (trot/walk/pronk), task-assignment verification.
   \item \itemhead{Ops:} Docker for reproducible environments (Gurtai and dev fleets); CI/CD failure triage (local-pass/CI-fail diagnosis); E2E test automation with Playwright; headless-server deployments (WSL2).
   \item \itemhead{Experimentation:} power-distribution experiments on legged robots (buck-converter thermal limits, contact-resistance losses), PWM timer allocation studies, I2C bus topology (OLED 0x3C, PCA9685 0x40).
@@ -142,10 +145,10 @@ Computer-science undergraduate (IILM University, Gurugram) working across the fu
 \section{Skills}
 \begin{itemize}
   \item \itemhead{Languages:} Python, JavaScript, TypeScript, C++, Dart, SQL, Bash
-  \item \itemhead{AI \& ML:} GenAI applications, prompt engineering, LLMOps, AI agents \& chatbots, RAG concepts, OpenCV, EfficientNet (transfer learning), local inference (Ollama)
+  \item \itemhead{AI \& ML:} GenAI applications, prompt engineering, LLMOps, AI agents \& chatbots, RAG concepts, OpenCV, EfficientNet (transfer learning), local inference (Ollama, LM Studio)
   \item \itemhead{Web \& Mobile:} Next.js, React, WXT (browser extensions), Node.js, Express, Flutter, Prisma/PostgreSQL, Firebase, Docker
   \item \itemhead{Embedded \& Hardware:} ESP32 (firmware, PWM, I2C), Raspberry Pi, Arduino, ROS2 Humble, Gazebo, servo control, soldering and schematic-level circuit work, 3D printing (Fusion 360)
-  \item \itemhead{Ops \& Tooling:} Git, GitHub, Docker, CI/CD debugging, Playwright E2E, Vercel, ESLint, WSL2, AWS (basics: EC2/S3/Bedrock concepts)
+  \item \itemhead{Ops \& Tooling:} Git, GitHub, Docker, CI/CD debugging, Playwright E2E, Vercel, ESLint, WSL2, AWS (basics: EC2/S3/Bedrock concepts), custom agent workflows (Hermes), Obsidian second brain / knowledge graph
   \item \itemhead{Lab \& EE fundamentals:} Tinkercad circuit simulation, breadboard design, sensors/actuators (PIR, IR, HC-SR04, 7-segment, 16$\times$2 LCD-I2C), AC/DC and Ohm's law
 \end{itemize}
 
