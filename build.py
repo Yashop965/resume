@@ -27,6 +27,10 @@ def build(variant: str) -> str:
     if variant == "cv":
         tex = os.path.join(outdir, "cv.tex")
         shutil.copy(os.path.join(REPO, "cv.tex"), tex)
+        imgdst = os.path.join(outdir, "img")
+        os.makedirs(imgdst, exist_ok=True)
+        for jf in os.listdir(os.path.join(REPO, "img")):
+            shutil.copy(os.path.join(REPO, "img", jf), os.path.join(imgdst, jf))
     else:
         tex = os.path.join(outdir, f"resume_{variant}.tex")
         shutil.copy(SRC, tex)
@@ -56,6 +60,7 @@ def deploy():
             print(r.stdout, r.stderr); raise SystemExit("git step failed")
     sh("git", "add", "resume.tex", "cv.tex", "build.py", "index.html",
        "resume.pdf", "resume_full.pdf", "resume_software.pdf", "resume_ml.pdf", "cv.pdf")
+    sh("git", "add", "img/diagram_swarm.jpg", "img/diagram_sesame.jpg", "img/diagram_campass.jpg", "img/diagram_ops.jpg")
     sh("git", "add", ".gitignore")
     sh("git", "commit", "-m", "resume + cv: LaTeX sources (tectonic) and built PDFs")
     sh("git", "push", "origin", "HEAD")

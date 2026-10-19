@@ -5,6 +5,7 @@
 \usepackage{newtxtext}
 \usepackage{enumitem}
 \usepackage{titlesec}
+\usepackage{graphicx}
 \usepackage{xcolor}
 \usepackage[colorlinks=false]{hyperref}
 
@@ -165,5 +166,28 @@ Computer-science undergraduate (IILM University, Gurugram) working across the fu
   \item Open-source quadruped firmware and hardware: \href{https://github.com/Yashop965/sesame-robot}{github.com/Yashop965/sesame-robot}
   \item GitHub: \href{https://github.com/Yashop965}{github.com/Yashop965} \textbar{} Resume (web): \href{https://yashop965.github.io/resume/}{yashop965.github.io/resume}
 \end{itemize}
+
+% ================= APPENDIX - SYSTEM DIAGRAMS =================
+\section{Appendix --- System Diagrams}
+
+\begin{center}
+\includegraphics[width=0.96\textwidth]{img/diagram_swarm.jpg}\\[1pt]
+{\small \emph{Swarm architecture: ground-station UI $\to$ mother hexacopter (task router, capability-aware scoring) $\to$ sub-drone mesh (ROS$\to$MQTT/TCP/UDP) $\to$ autonomous dock. 4/4 task assignments validated in headless Gazebo.}}
+\end{center}
+
+\begin{center}
+\includegraphics[width=0.96\textwidth]{img/diagram_sesame.jpg}\\[1pt]
+{\small \emph{Sesame block diagram: ESP32 DevKitC, 8$\times$ MG90S legs (4 PWM timers), incident-fixed 5\,A buck (verified 2\,A), OLED status (I2C 0x3C).}}
+\end{center}
+
+\begin{center}
+\includegraphics[width=0.96\textwidth]{img/diagram_campass.jpg}\\[1pt]
+{\small \emph{CamPass data flow: Flutter app $\to$ Node.js/Express API $\to$ PostgreSQL/Prisma + Firebase FCM $\to$ caregiver notifications.}}
+\end{center}
+
+\begin{center}
+\includegraphics[width=0.96\textwidth]{img/diagram_ops.jpg}\\[1pt]
+{\small \emph{Experiments/automation stack: Ollama/LM Studio local inference, Gurtai agent, Hermes internal workflows, Obsidian second-brain knowledge graph, CI/CD + Playwright.}}
+\end{center}
 
 \end{document}
