@@ -3,69 +3,106 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Resume - Yash Raj Shrivastava</title>
+  <title>CV - Yash Raj Shrivastava</title>
   <style>
-    body { font-family: "Segoe UI", Arial, sans-serif; margin: 0; background: #f7f8fa; color: #1a1a1a; line-height: 1.55; }
-    .downloads { background: #1F4E79; color: #fff; padding: 10px 24px; display: flex; gap: 16px; flex-wrap: wrap; align-items: center; }
-    .downloads span { font-size: 0.85rem; opacity: .85; }
-    .downloads a { color: #fff; font-weight: 600; font-size: 0.9rem; text-decoration: none; border: 1px solid rgba(255,255,255,.4); padding: 4px 12px; border-radius: 6px; }
-    .downloads a:hover { background: rgba(255,255,255,.15); }
-    .page { max-width: 820px; margin: 24px auto; background: #fff; padding: 36px 44px; box-shadow: 0 1px 4px rgba(0,0,0,.08); }
-    header { text-align: center; margin-bottom: 18px; }
-    h1 { margin: 0; font-size: 1.7rem; }
-    .subtitle { color: #444; margin: 4px 0; font-size: 0.95rem; }
+    :root { --ink: #1a1a1a; --muted: #555; --accent: #1F4E79; --line: #e2e6ea; }
+    * { box-sizing: border-box; }
+    body { font-family: "Segoe UI", -apple-system, Arial, sans-serif; margin: 0; background: #f4f6f8; color: var(--ink); line-height: 1.55; }
+
+    /* ---- download bar ---- */
+    .downloads {
+      position: sticky; top: 0; z-index: 10;
+      background: rgba(23, 43, 77, 0.97); backdrop-filter: blur(4px);
+      color: #fff; padding: 12px 24px;
+      display: flex; gap: 10px; flex-wrap: wrap; align-items: center;
+      box-shadow: 0 2px 8px rgba(0,0,0,.18);
+    }
+    .downloads .label { font-size: 0.8rem; font-weight: 600; letter-spacing: .08em; text-transform: uppercase; opacity: .7; margin-right: 4px; }
+    .downloads a {
+      color: #fff; text-decoration: none; font-size: 0.85rem; font-weight: 500;
+      border: 1px solid rgba(255,255,255,.35); border-radius: 999px;
+      padding: 5px 14px; display: inline-flex; align-items: center; gap: 6px;
+      transition: background .15s, transform .15s;
+    }
+    .downloads a::before { content: "\2193"; font-weight: 700; opacity: .8; }
+    .downloads a:hover { background: rgba(255,255,255,.16); transform: translateY(-1px); }
+    .downloads a.primary { background: #fff; color: #172B4D; border-color: #fff; font-weight: 700; }
+    .downloads a.primary::before { color: var(--accent); }
+    .downloads a.primary:hover { background: #e8f0fb; }
+
+    /* ---- page ---- */
+    .page { max-width: 840px; margin: 28px auto; background: #fff; padding: 40px 48px; box-shadow: 0 1px 6px rgba(0,0,0,.07); border-radius: 10px; }
+    header { text-align: center; margin-bottom: 8px; }
+    .badge { display: inline-block; font-size: 0.68rem; font-weight: 700; letter-spacing: .14em; text-transform: uppercase; color: var(--accent); border: 1px solid var(--accent); border-radius: 999px; padding: 3px 12px; margin-bottom: 10px; }
+    h1 { margin: 0; font-size: 1.9rem; letter-spacing: .01em; }
+    .subtitle { color: var(--muted); margin: 6px 0 10px; font-size: 0.95rem; }
     .contact { font-size: 0.85rem; color: #333; }
-    .contact a { color: #1F4E79; text-decoration: none; }
-    h2 { color: #1F4E79; font-size: 1.02rem; border-bottom: 1px solid #1F4E79; padding-bottom: 3px; margin: 20px 0 8px; }
-    h3 { font-size: 0.95rem; margin: 10px 0 3px; }
-    h3 .right { float: right; font-weight: normal; color: #555; font-size: 0.85rem; }
+    .contact a { color: var(--accent); text-decoration: none; font-weight: 500; }
+    .contact a:hover { text-decoration: underline; }
+
+    h2 { color: var(--accent); font-size: 0.95rem; font-weight: 700; letter-spacing: .1em; text-transform: uppercase; border-bottom: 2px solid var(--accent); padding-bottom: 4px; margin: 26px 0 10px; }
+    h3 { font-size: 0.95rem; margin: 12px 0 3px; }
+    h3 .right { float: right; font-weight: 400; color: var(--muted); font-size: 0.85rem; }
     ul { margin: 4px 0 10px; padding-left: 20px; }
-    li { margin: 2px 0; font-size: 0.9rem; }
-    .skills li { margin: 3px 0; }
+    li { margin: 3px 0; font-size: 0.9rem; }
     .b { font-weight: 700; }
-    footer { text-align: center; color: #999; font-size: 0.75rem; padding: 16px; }
-    @media print { .downloads { display: none; } .page { box-shadow: none; margin: 0; max-width: none; } }
+    .meta { font-size: 0.85rem; color: var(--muted); margin: 2px 0 6px; }
+    footer { text-align: center; color: #999; font-size: 0.75rem; padding: 18px; }
+
+    @media print {
+      .downloads { display: none; }
+      body { background: #fff; }
+      .page { box-shadow: none; margin: 0; max-width: none; padding: 0; border-radius: 0; }
+    }
+    @media (max-width: 600px) { .page { padding: 24px 20px; margin: 14px; } }
   </style>
 </head>
 <body>
 
 <div class="downloads">
-  <span>Download:</span>
-  <a href="resume.pdf">Resume (2-page, full scope)</a>
-  <a href="cv.pdf">CV (3-page, detailed)</a>
-  <a href="resume_software.pdf">Software variant</a>
-  <a href="resume_ml.pdf">ML/Robotics variant</a>
+  <span class="label">Downloads</span>
+  <a class="primary" href="cv.pdf">CV (this page, PDF)</a>
+  <a href="resume.pdf">Resume &middot; full scope</a>
+  <a href="resume_software.pdf">Resume &middot; software</a>
+  <a href="resume_ml.pdf">Resume &middot; ML / robotics</a>
 </div>
 
 <div class="page">
   <header>
+    <div class="badge">Curriculum Vitae</div>
     <h1>Yash Raj Shrivastava</h1>
-    <div class="subtitle">Co-founder &amp; Full-Stack Developer &nbsp;|&nbsp; B.Tech CSE (IILM, 2025&ndash;2029)</div>
+    <div class="subtitle">Co-founder &amp; Full-Stack Developer &nbsp;&middot;&nbsp; B.Tech CSE, IILM University (2025&ndash;2029)</div>
     <div class="contact">
       Gurugram, India &nbsp;|&nbsp; +91 9589127943 &nbsp;|&nbsp; <a href="mailto:yashop965@gmail.com">yashop965@gmail.com</a><br>
       <a href="https://www.linkedin.com/in/yash-shrivastava-9b1079306/">linkedin.com/in/yash-shrivastava-9b1079306</a> &nbsp;|&nbsp;
-      <a href="https://github.com/Yashop965">github.com/Yashop965</a>
+      <a href="https://github.com/Yashop965">github.com/Yashop965</a> &nbsp;|&nbsp;
+      <a href="https://yashop965.github.io/resume/">yashop965.github.io/resume</a>
     </div>
   </header>
 
-  <h2>Summary</h2>
+  <h2>Profile</h2>
   <ul>
-    <li>Co-founder, product designer, and full-stack developer. Shipped web applications in Python and JavaScript, robust data models with Prisma, and took a reservation/analytics SaaS from prototype to deployment.</li>
-    <li>Hardware portfolio: open-source ESP32 quadruped robot and ROS2 swarm-drone system &mdash; embedded systems plus AI/ML.</li>
-    <li>Completed the 360 Labs AI test work week; Sagar Defence Engineering technical interview (drone/AI internship).</li>
+    <li>Final-year-leaning B.Tech CSE student and co-founder shipping SaaS products full-stack (Next.js/React/Prisma/PostgreSQL/Node.js) with a privacy-first design stance.</li>
+    <li>Hardware portfolio spanning embedded (ESP32, 8-DOF quadruped), ROS2/Gazebo swarm simulation, and DIY optics; AI/ML work from transfer-learned EfficientNet models to local-LLM agents.</li>
+    <li>Competition experience at Smart India Hackathon 2026 (ISRO) plus 360 Labs AI test week.</li>
+  </ul>
+
+  <h2>Education</h2>
+  <div class="meta"><span class="b">IILM University, Gurugram</span> &mdash; B.Tech, Computer Science &amp; Engineering (2025&ndash;2029)</div>
+  <ul>
+    <li>Relevant coursework: Data Structures &amp; Algorithms, OOP, IoT &amp; Robotics Foundation (CSE25309), Networks, DBMS, Digital Design.</li>
   </ul>
 
   <h2>Experience</h2>
   <h3><span class="b">Co-founder &amp; Product Designer &mdash; Stealth-mode SaaS</span><span class="right">(ongoing)</span></h3>
   <ul>
-    <li>Leading product strategy, technical architecture, and investor outreach for a reservation and analytics SaaS platform.</li>
-    <li>Owns the full product lifecycle: ideation, UX design, full-stack development, and deployment.</li>
+    <li>Leading product strategy, technical architecture, and investor outreach for a reservation and analytics SaaS.</li>
+    <li>Shipped the full lifecycle: Next.js/Prisma/PostgreSQL/Node.js application, deployment, and investor-ready pitch materials.</li>
   </ul>
 
   <h3><span class="b">Lead Developer &mdash; Gurtai Bot</span><span class="right">(ongoing)</span></h3>
   <ul>
-    <li>Built a Python-based Telegram AI assistant with local LLM integration via Ollama for privacy-first, zero API-cost responses.</li>
-    <li>Designed a plugin-based modular architecture for extensible workflow automation; containerized with Docker.</li>
+    <li>Python Telegram AI assistant with local LLM via Ollama &mdash; privacy-first, zero API costs; plugin-based architecture; Dockerized.</li>
   </ul>
 
   <h3><span class="b">SIH 2026 (ISRO) &mdash; PS171 Browser Agent</span><span class="right">Optimization &amp; Testing Lead</span></h3>
@@ -75,69 +112,75 @@
   </ul>
 
   <h3><span class="b">360 Labs &mdash; AI Test Work Week</span><span class="right">(Aug 2026)</span></h3>
-  <ul><li>Completed an intensive 1-week AI development program: rapid decision-making, fast shipping, validated output under time pressure.</li></ul>
+  <ul><li>Intensive 1-week AI development program: rapid decision-making, fast shipping, validated output under time pressure.</li></ul>
 
   <h3><span class="b">Sagar Defence Engineering &mdash; Technical Interview (Drone/AI Intern)</span><span class="right">(Aug 2026)</span></h3>
   <ul><li>Interviewed on robotics projects, embedded systems, and defence-sector requirements; assessed interview process for defence hiring.</li></ul>
 
   <h2>Software Projects</h2>
-  <h3><span class="b">CamPass &mdash; Student Safety &amp; Tracking</span><span class="right">(Flutter, Node.js, PostgreSQL, FCM)</span></h3>
+  <div class="meta"><span class="b">CamPass</span> &mdash; Student Safety &amp; Tracking &middot; Flutter, Node.js, PostgreSQL, Firebase FCM</div>
+  <ul><li>Real-time geofence tracking, SOS alerts, smart notifications; digital pass system with barcode scanning and role-based access.</li></ul>
+
+  <div class="meta"><span class="b">Machina</span> &mdash; Privacy-first SaaS</div>
   <ul>
-    <li>Real-time geofence tracking, SOS alerts, and smart notifications via Firebase Cloud Messaging; digital pass system with barcode scanning and role-based access.</li>
+    <li>Next.js application with Prisma schema and seeding; NextAuth; Vercel deploy. Component-driven design; Tailwind utility styling.</li>
   </ul>
 
-  <h3><span class="b">RiceScan &mdash; AI Crop-Disease Detection</span><span class="right">(Python, EfficientNetV2S)</span></h3>
+  <h2>AI / ML Projects</h2>
+  <div class="meta"><span class="b">RiceScan</span> &mdash; AI Crop-Disease Detection &middot; Python, EfficientNetV2S</div>
   <ul>
-    <li>AI-powered agricultural app (EfficientNetV2S) with local knowledge base for symptoms/treatments and a feedback loop for model retraining.</li>
+    <li>EfficientNetV2S classification with a local knowledge base for symptoms/treatments and a user-feedback retraining loop.</li>
+  </ul>
+  <div class="meta"><span class="b">Gurtai</span> &mdash; Personal AI Assistant &middot; Python, Ollama, Telegram Bot API, Docker</div>
+  <ul><li>Local-LLM Telegram assistant &mdash; plugin-based, zero API costs, containerized.</li></ul>
+
+  <h2>Hardware &amp; Robotics</h2>
+  <div class="meta"><span class="b">Sesame Robot</span> &mdash; ESP32 8-DOF Quadruped (Open Source)</div>
+  <ul>
+    <li>Mini quadruped from scratch: ESP32 DevKitC, 8&times; MG90S servos, 3D-printed chassis; Wi-Fi AP + captive portal control, REST API, OLED status.</li>
+    <li>Pinned ESP32Servo v3.0.9, PWM timer allocation for 8 servos. Root-caused a 4&nbsp;A power failure (servo current + regulator loss) &rarr; firmware ECO mode + 5&nbsp;A buck (verified 2&nbsp;A).</li>
+    <li>Gazebo/ROS2 simulation in WSL2 &middot; Open source: github.com/Yashop965/sesame-robot</li>
   </ul>
 
-  <h2>Hardware &amp; Robotics Projects</h2>
-  <h3><span class="b">Sesame Robot &mdash; ESP32 8-DOF Quadruped (Open Source)</span></h3>
+  <div class="meta"><span class="b">Swarm Drone System</span> &mdash; ROS2 Humble Simulation</div>
   <ul>
-    <li>Built a mini quadruped from scratch: ESP32 DevKitC, 8&times; MG90S metal-gear servos, 3D-printed PLA chassis; custom firmware (Wi-Fi AP, captive-portal browser control, REST API, OLED status).</li>
-    <li>Pinned ESP32Servo v3.0.9, configured PWM timer allocation for 8 servos; 4&nbsp;A power failure root-caused and fixed via firmware ECO mode + upgraded 5&nbsp;A buck (verified 2&nbsp;A).</li>
-    <li>Basic walk gait achieved; Gazebo/ROS2 simulation in WSL2; open source at <a href="https://github.com/Yashop965/sesame-robot">github.com/Yashop965/sesame-robot</a>.</li>
-  </ul>
-
-  <h3><span class="b">Swarm Drone System &mdash; ROS2 Humble Simulation</span></h3>
-  <ul>
-    <li>Carrier hexacopter carrying 4&ndash;6 autonomous sub-drones; capability-aware task scoring, ROS&rarr;MQTT/TCP mesh bridge, Gazebo physics with 4/4 validated task assignments (clean colcon build, 1.29&nbsp;s).</li>
+    <li>Carrier hexacopter carrying 4&ndash;6 autonomous sub-drones; capability-aware task scoring; ROS&rarr;MQTT/TCP mesh bridge; Gazebo physics with 4/4 validated task assignments.</li>
     <li>Full stack: ground-station UI &rarr; mother drone &rarr; sub-drone mesh &rarr; return-and-dock cycle with failsafe navigation.</li>
   </ul>
 
-  <h3><span class="b">Other Hardware &mdash; DIY Cameras &amp; Drone Component Testing</span></h3>
-  <ul>
-    <li>Custom camera prototypes with controlled lighting and exposure-control systems; drone ESC (30&nbsp;A, Hobbywing, DShot) and motor-driver testing for flight stability and power efficiency.</li>
-  </ul>
+  <div class="meta"><span class="b">Other Hardware</span> &mdash; DIY Cameras &amp; Drone Component Testing</div>
+  <ul><li>Exposure-control systems and custom camera prototypes; ESC (30&nbsp;A, Hobbywing, DShot) and motor-driver testing for stability and efficiency.</li></ul>
 
-  <h2>Experiments &amp; Ops</h2>
+  <h2>Experiments, Ops &amp; Simulation</h2>
   <ul>
-    <li><span class="b">Simulation:</span> ROS2 Humble + Gazebo headless testing in WSL2 &mdash; URDF modeling, gait-pattern validation (4/4 task assignments on the swarm system).</li>
-    <li><span class="b">Ops:</span> Docker for reproducible environments (Gurtai, dev fleets); CI/CD failure triage (local-pass/CI-fail); E2E test automation (Playwright).</li>
-    <li><span class="b">Lab work:</span> IoT &amp; Robotics Foundation Lab (CSE25309) &mdash; ESP32/I2C/PWM servo control, circuit simulation (Tinkercad), 8-DOF quadruped project.</li>
+    <li><span class="b">Simulation:</span> ROS2 Humble + Gazebo headless testing in WSL2 &mdash; URDF modeling, gait-pattern validation (4/4 task assignments).</li>
+    <li><span class="b">Ops:</span> Docker for reproducible environments; CI/CD failure triage (local-pass/CI-fail); E2E automation (Playwright).</li>
+    <li><span class="b">Lab work:</span> IoT &amp; Robotics Foundation Lab (CSE25309) &mdash; ESP32/I2C/PWM servo control, Tinkercad circuit simulation, 8-DOF quadruped project.</li>
   </ul>
 
   <h2>Skills</h2>
-  <ul class="skills">
+  <ul>
     <li><span class="b">Languages:</span> Python, JavaScript, TypeScript, C++, Dart, SQL, Bash</li>
-    <li><span class="b">AI &amp; ML:</span> GenAI applications, prompt engineering, LLMOps, AI agents &amp; chatbots, RAG concepts, OpenCV, EfficientNet (transfer learning)</li>
+    <li><span class="b">AI &amp; ML:</span> GenAI applications, prompt engineering, LLMOps, agents &amp; chatbots, RAG concepts, OpenCV, EfficientNet</li>
     <li><span class="b">Web &amp; Mobile:</span> Next.js, React, WXT, Node.js, Express, Flutter, Prisma/PostgreSQL, Firebase, Docker</li>
-    <li><span class="b">Embedded &amp; Hardware:</span> ESP32, Raspberry Pi, Arduino, ROS2 (Humble), Gazebo, servo/PWM/I2C, breadboard &amp; schematic-level circuit work</li>
-    <li><span class="b">Ops &amp; Tooling:</span> Git, GitHub, CI/CD debugging, Playwright E2E, Vercel, WSL2, AWS (basics)</li>
-    <li><span class="b">Lab &amp; EE:</span> Tinkercad circuit simulation, sensors/actuators (PIR, IR, HC-SR04, 7-segment, LCD-I2C), AC/DC and Ohm's law</li>
+    <li><span class="b">Embedded &amp; Hardware:</span> ESP32, Raspberry Pi, Arduino, ROS2 (Humble), Gazebo, servo/PWM/I2C, schematic-level circuit work</li>
+    <li><span class="b">Ops &amp; Tooling:</span> Git, CI/CD debugging, Playwright E2E, Vercel, WSL2, AWS (basics)</li>
+    <li><span class="b">Lab &amp; EE:</span> Tinkercad simulation, sensors/actuators (PIR, IR, HC-SR04, 7-seg, LCD-I2C), AC/DC &amp; Ohm's law</li>
   </ul>
-
-  <h2>Education</h2>
-  <ul><li><span class="b">IILM University, Gurugram</span> &mdash; B.Tech, Computer Science &amp; Engineering (2025&ndash;2029)</li></ul>
 
   <h2>Certifications</h2>
   <ul>
     <li>DeepLearning.AI &mdash; <i>AI Python for Beginners</i>; <i>Build Rich-Context AI Apps with Anthropic</i></li>
     <li>360 Labs &mdash; AI Test Work Week (Aug 2026)</li>
   </ul>
+
+  <h2>Links</h2>
+  <ul>
+    <li>LinkedIn: linkedin.com/in/yash-shrivastava-9b1079306 &middot; GitHub: github.com/Yashop965 &middot; Portfolio site: yashop965.github.io</li>
+  </ul>
 </div>
 
-<footer>Source of truth: the LaTeX sources in this repo (Tectonic build) &middot; this page mirrors resume.tex &middot; updated 19 Oct 2026</footer>
+<footer>Mirrors cv.tex (LaTeX / Tectonic) &middot; PDFs: cv.pdf, resume.pdf, resume_software.pdf, resume_ml.pdf &middot; updated 19 Oct 2026</footer>
 
 </body>
 </html>
