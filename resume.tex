@@ -16,6 +16,7 @@
 \newif\ifinclhardware \inclhardwaretrue
 \newif\ifinclrecent \inclrecenttrue
 \newif\ifmllead \mlleadfalse
+\newif\ifresearch \researchfalse
 
 \input{variant} % may redefine the toggles above
 
@@ -33,7 +34,7 @@
 % ================= HEADER =================
 \begin{center}
 {\LARGE\textbf{Yash Raj Shrivastava}}\\[2pt]
-{\normalsize Co-founder \& Full-Stack Developer \textbar{} B.Tech CSE (IILM, 2025--2029)}\\[1pt]
+{\normalsize \ifresearch AI \& Agent Engineer \textbar{} B.Tech CSE (IILM, 2025--2029)\else Co-founder \& Full-Stack Developer \textbar{} B.Tech CSE (IILM, 2025--2029)\fi}\\[1pt]
 {\small Gurugram, India \textbar{} +91 9589127943 \textbar{} \href{mailto:yashop965@gmail.com}{yashop965@gmail.com}\\
 \href{https://www.linkedin.com/in/yash-shrivastava-9b1079306/}{linkedin.com/in/yash-shrivastava-9b1079306} \textbar{} \href{https://github.com/Yashop965}{github.com/Yashop965} \textbar{} \href{https://yashop965.github.io/resume/}{yashop965.github.io/resume}}
 \end{center}
@@ -41,7 +42,13 @@
 
 % ================= SUMMARY =================
 \section{Summary}
-\ifmllead
+\ifresearch
+\begin{itemize}
+  \item Computer-science undergraduate working on LLM agents, agent evaluation, and RAG: led the benchmarking and E2E testing track of a PII-aware browser agent for ISRO SIH 2026, including live agent-trajectory diagnosis.
+  \item Runs local-LLM agent stacks (Ollama/LM Studio) daily; certified in Anthropic rich-context AI apps (DeepLearning.AI); co-inventor of a published Indian patent application (App.\ No. 202611041006 A).
+  \item Shipped full-stack products end-to-end (Next.js/Prisma/Node/Flutter); open-source ESP32 quadruped and ROS2 swarm simulation portfolio.
+\end{itemize}
+\else\ifmllead
 \begin{itemize}
   \item Computer-science student combining software engineering with embedded systems and applied ML/GenAI.
   \item Built an open-source ESP32 quadruped robot and a ROS2 swarm-drone simulation; run production full-stack and local-LLM systems.
@@ -53,7 +60,7 @@
   \item GenAI/LLM engineering: local-LLM agents (Ollama/LM Studio), prompt and context design, RAG concepts; PII-aware browser agent for SIH 2026 (ISRO).
   \item Side portfolio: open-source ESP32 quadruped robot and ROS2 swarm simulation; completed the 360 Labs AI test week.
 \end{itemize}
-\fi
+\fi\fi
 
 % ================= EXPERIENCE =================
 \section{Experience}
@@ -87,6 +94,27 @@
 \subsection{Sagar Defence Engineering --- Technical Interview (Drone/AI Intern) \hfill (Aug 2026)}
 \begin{itemize}
   \item Interviewed on robotics projects, embedded systems, and defence-sector requirements; assessed interview process for defence hiring.
+\end{itemize}
+\fi
+
+% ================= RESEARCH / EVALUATION (research-variant only) =================
+\ifresearch
+\section{Research, Evaluation \& IP}
+
+\subsection{SIH 2026 (ISRO) --- PS171 Agent Evaluation \& Optimization}
+\begin{itemize}
+  \item Authored E2E benchmark tasks and regression suites (Playwright) for a PII-aware browser agent; tuned performance and diagnosed live agent logs to catch failing trajectories before judge demos.
+  \item PII-safe design constraints shaped the agent's action space; produced evaluation-facing documentation and demo assets for the final submission.
+\end{itemize}
+
+\subsection{Local-LLM Agent Experiments --- Ollama / LM Studio}
+\begin{itemize}
+  \item Model selection and quantization tradeoffs, prompt and context design, cost/privacy optimization for agent workloads; built internal automation agents (research digests, CI triage, outreach pipelines) on a knowledge-graph second brain.
+\end{itemize}
+
+\subsection{Published Patent --- Secure Mobile Examination Management}
+\begin{itemize}
+  \item Co-inventor (1 of 5), Indian Patent App.\ No. 202611041006 A (Patent Office Journal 19/2026, May 2026): 17-claim system with role-based access, encrypted channels, and validated data mapping for on-campus exam management.
 \end{itemize}
 \fi
 
@@ -179,6 +207,9 @@
 % ================= SKILLS (ATS-safe: plain comma lines, no table) =================
 \section{Skills}
 \begin{itemize}
+\ifresearch
+  \item \itemhead{Research \& Evaluation:} agent evaluation \& benchmarking, model trajectory debugging, E2E test automation (Playwright), local LLM inference (Ollama, LM Studio), RAG, prompt/context design
+\fi
   \item \itemhead{Languages:} Python, JavaScript, TypeScript, C++, Dart, SQL, Bash
   \item \itemhead{AI \& ML:} GenAI applications, prompt engineering, LLMOps, AI agents \& chatbots, local inference (Ollama, LM Studio), RAG concepts, OpenCV, EfficientNet (transfer learning)
   \item \itemhead{Web \& Mobile:} Next.js, React, Node.js, Express, Flutter, Prisma/PostgreSQL, Firebase, Docker

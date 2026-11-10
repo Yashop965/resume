@@ -19,6 +19,7 @@ VARIANTS = {
     "full":     ["\\inclhardwaretrue",  "\\inclrecentfalse", "\\mlleadfalse"],
     "software": ["\\inclhardwarefalse", "\\inclrecentfalse", "\\mlleadfalse"],
     "ml":       ["\\inclhardwaretrue",  "\\inclrecenttrue",  "\\mlleadtrue"],
+    "research": ["\\inclhardwarefalse", "\\inclrecenttrue",  "\\mlleadfalse", "\\researchtrue"],
 }
 
 def build(variant: str) -> str:
@@ -59,7 +60,8 @@ def deploy():
         if r.returncode != 0:
             print(r.stdout, r.stderr); raise SystemExit("git step failed")
     sh("git", "add", "resume.tex", "cv.tex", "build.py", "index.html",
-       "resume.pdf", "resume_full.pdf", "resume_software.pdf", "resume_ml.pdf", "cv.pdf")
+       "resume.pdf", "resume_full.pdf", "resume_software.pdf", "resume_ml.pdf", "cv.pdf",
+       "resume_research.pdf")
     sh("git", "add", "img/diagram_swarm.jpg", "img/diagram_sesame.jpg", "img/diagram_campass.jpg", "img/diagram_ops.jpg")
     sh("git", "add", ".gitignore")
     sh("git", "commit", "-m", "resume + cv: LaTeX sources (tectonic) and built PDFs")
